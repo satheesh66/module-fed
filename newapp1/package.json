@@ -1,0 +1,52 @@
+{
+  "name": "newapp1",
+  "version": "1.0.0",
+  "description": "for testing",
+  "private": "true",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --https",
+    "build": "webpack ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "es-check": "^6.0.0",
+    "webpack": "^5.53.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.2.1"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.15.4",
+    "html-webpack-plugin": "^5.5.0"
+  },
+  "externals": {
+    "development": {
+      "react": "https://cdn.skypack.dev/react@v17.0.1",
+      "react-dom": "https://cdn.skypack.dev/react-dom@v17.0.1"
+    },
+    "production": {
+      "react": "https://cdn.skypack.dev/pin/react@v17.0.1-yH0aYV1FOvoIPeKBbHxg/mode=imports,min/optimized/react.js"
+    }
+  },
+  "sharedLibs": {
+    "react": {
+      "singleton": true
+    },
+    "react-dom": {
+      "singleton": true
+    }
+  },
+  "exportedModules": {
+    "./app1": "./src/app.jsx"
+  },
+  "dependsOn": [
+    "newapp"
+  ]
+}
